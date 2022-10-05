@@ -15,13 +15,14 @@ const upload = multer({storage});
 const path = require('path');
 
 const app = express();
+app.use(express.static('public'))
 
 app.listen(80, () => {
     console.log('Server running')
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+    res.sendFile('index.html')
 })
 
 app.post('/upload-binary', upload.single('file'), (req, res, next) => {

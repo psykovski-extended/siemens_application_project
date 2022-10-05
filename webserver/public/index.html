@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where is my one?!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Space+Mono&display=swap');
+
+        * {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        body, .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333333;
+            color: blanchedalmond;
+        }
+
+        .container {
+            width: 800px;
+            height: 200px;
+            background-color: #222222;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+
+        h1 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        span {
+            background-color: #333333;
+            border-radius: 5px;
+            padding-right: 10px;
+        }
+
+        .file_input_field {
+            margin-bottom: 20px;
+        }
+
+        .file_input_field, .submit_btn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            width: 350px;
+            background-color: #333333;
+            border-radius: 5px;
+            color: blanchedalmond;
+            font-size: large;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            border: none;
+        }
+
+        input[type="file"] {
+            background-color: #222;
+        }
+
+        #file_input::-webkit-file-upload-button {
+            background-color: #333333;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            color: blanchedalmond;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="/upload-binary" enctype="multipart/form-data">
+            <div class="file_input">
+                <h1>Choose your <span>.bin</span> and watch the magic!</h1>
+                <div class="file_input_field">
+                    <input type="file" accept=".bin" name="file" id="file_input"/>
+                </div>
+            </div>
+            <div class="submit_btn">
+                <input value="Submit" type="submit" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
